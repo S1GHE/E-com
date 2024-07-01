@@ -1,0 +1,20 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.container{
+  padding: 12px;
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      padding: vw(24, $breakpoint);
+    }
+  }
+}
+
+.center_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}

@@ -1,0 +1,30 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.content{
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  &__cards{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  @each $label, $breakpoint in $breakpoints {
+    @media (min-width: #{$breakpoint}px) {
+      margin-top: vw(40, $breakpoint);
+      gap: vw(24, $breakpoint);
+
+      &__cards{
+        gap: vw(8, $breakpoint);
+      }
+    }
+  }
+
+  @media (max-width: #{get-breakpoint("sm")}px) {
+    flex-direction: column;
+  }
+}

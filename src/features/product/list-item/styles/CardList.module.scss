@@ -1,0 +1,85 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.list_container {
+  width: max-content;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--black);
+
+  @each $label, $breakpoint in $breakpoints {
+    @media (min-width: #{$breakpoint}px) {
+      height: vw(80, $breakpoint);
+    }
+  }
+
+  @media (min-width: #{get-breakpoint("xs")}px) and (max-width: #{get-breakpoint("sm") - 1}px) {
+    width: 100%;
+  }
+}
+
+.list_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  gap: 24px;
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    min-width: 200px;
+  }
+
+  p{
+    color: var(--black-t60);
+  }
+
+  @each $label, $breakpoint in $breakpoints {
+    @media (min-width: #{$breakpoint}px) {
+      gap: vw(24, $breakpoint);
+      padding: vw(16, $breakpoint);
+
+      @if $label != 'xs' {
+        &__head {
+          gap: vw(12, $breakpoint);
+          min-width: vw(200, $breakpoint);
+        }
+      } @else {
+        &__head {
+          min-width: inherit;
+        }
+      }
+    }
+  }
+
+  @media (min-width: #{get-breakpoint("xs")}px) and (max-width: #{get-breakpoint("sm") - 1}px) {
+    justify-content: space-between;
+  }
+}
+
+.list_img {
+  position: relative;
+  width: 100px;
+  height: 100%;
+  border-right: 2px solid var(--black);
+  background-color: var(--black-t08);
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-position: center;
+  }
+
+  @each $label, $breakpoint in $breakpoints {
+    @media (min-width: #{$breakpoint}px) {
+      width: vw(90, $breakpoint);
+    }
+  }
+}

@@ -1,0 +1,19 @@
+$breakpoints: (
+  'xs': 0,
+  'sm': 576,
+  'md': 768,
+  'lg': 992,
+  'xl': 1200,
+  'xxl': 1440,
+  'xxxl': 1920
+);
+
+:root{
+  --white: #fff;
+  --black: #000;
+
+  --black-t80: rgba(0, 0, 0, 0.8);
+  --black-t60: rgba(0, 0, 0, 0.6);
+  --black-t40: rgba(0, 0, 0, 0.4);
+  --black-t08: rgba(0, 0, 0, 0.08);
+}

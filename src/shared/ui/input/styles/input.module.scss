@@ -1,0 +1,33 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.input{
+  width: 100%;
+  border: 2px solid var(--black);
+  padding: 8px 6px;
+
+  &::placeholder{
+    color: var(--black-t40);
+    transition: 300ms;
+  }
+
+  @media (hover: hover) {
+    &:hover{
+      &::placeholder{
+        color: var(--black-t60);
+      }
+    }
+  }
+
+  &:active{
+    &::placeholder{
+      color: var(--black-t60);
+    }
+  }
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      padding: vw(14, $breakpoint) vw(16, $breakpoint);
+    }
+  }
+}

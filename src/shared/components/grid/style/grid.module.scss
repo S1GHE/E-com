@@ -1,0 +1,15 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.grid_container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px;
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      grid-template-columns: repeat(auto-fit, minmax(vw(130, $breakpoint), 1fr));
+      gap: vw(8, $breakpoint);
+    }
+  }
+}

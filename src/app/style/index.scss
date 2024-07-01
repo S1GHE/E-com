@@ -1,0 +1,11 @@
+@import "@shared/styles/config/config";
+@import "@shared/styles/config/reset";
+@import "@shared/styles/logic/mixin";
+
+@include font("Muller", normal, 500, "src/shared/fonts/MullerMedium.woff2");
+@include font("Muller", normal, 700, "src/shared/fonts/MullerBold.woff2");
+@include font("Muller", normal, 800, "src/shared/fonts/MullerExtraBold.woff2");
+
+body{
+  font-family: "Muller", sans-serif;
+}
