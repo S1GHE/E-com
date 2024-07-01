@@ -1,0 +1,31 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.container{
+  width: 100%;
+  padding: 16px;
+  border: 2px solid var(--black);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @each $label, $breakpoint in $breakpoints {
+    @media (min-width: #{$breakpoint}px) {
+      padding: vw(24, $breakpoint);
+      width: vw(230, $breakpoint);
+      gap: vw(24, $breakpoint);
+    }
+  }
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      gap: vw(12, $breakpoint);
+    }
+  }
+}

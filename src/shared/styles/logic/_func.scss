@@ -1,0 +1,10 @@
+@use "sass:math";
+@import "../config/config";
+
+@function vw($value, $size) {
+  @return calc(#{math.div($value, $size) * 100}vw);
+}
+
+@function get-breakpoint($key) {
+  @return map-get($breakpoints, $key);
+}

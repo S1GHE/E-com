@@ -1,0 +1,40 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.logo{
+  align-self: center;
+}
+
+.inputs{
+  input{
+    margin-bottom: 8px;
+
+    @each $label, $breakpoint in $breakpoints{
+      @media (min-width: #{$breakpoint}px) {
+        margin-bottom: vw(8, $breakpoint);
+      }
+    }
+  }
+}
+
+.bottom{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__btn{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      gap: vw(8, $breakpoint);
+      &__btn{
+        gap: vw(8, $breakpoint);
+      }
+    }
+  }
+}

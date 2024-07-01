@@ -1,0 +1,24 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @each $label, $breakpoint in $breakpoints {
+        @media (min-width: #{$breakpoint}px) {
+          gap: vw(8, $breakpoint);
+        }
+    }
+}
+
+.files{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black-t08);
+    border: 2px dashed var(--black-t40);
+}

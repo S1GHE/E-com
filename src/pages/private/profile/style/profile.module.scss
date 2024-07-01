@@ -1,0 +1,16 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.text_contain{
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 16px;
+    
+    @each $label, $breakpoint in $breakpoints {
+        @media (min-width: #{$breakpoint}px) {
+          margin-top: vw(40, $breakpoint);
+          gap: vw(24, $breakpoint);
+        }
+    }
+}

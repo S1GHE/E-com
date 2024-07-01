@@ -1,0 +1,43 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.header{
+  position: relative;
+  border-bottom: 2px solid var(--black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__burger{
+    display: none;
+
+    &_btn{
+      display: none;
+    }
+  }
+
+  &__link_list{
+    display: block;
+  }
+  
+  @media (max-width: #{get-breakpoint("sm")}px) {
+    &__link_list{
+      display: none;
+    }
+
+    &__burger{
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      right: 0;
+      top: 70px;
+      height: max-content;
+      background-color: white;
+      display: block;
+
+      &_btn{
+        display: block;
+      }
+    }
+  }
+}

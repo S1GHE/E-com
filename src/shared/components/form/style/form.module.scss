@@ -1,0 +1,20 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.form_container{
+  width: 300px;
+  gap: 40px;
+  padding-inline: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      gap: vw(40, $breakpoint);
+      padding-inline: vw(24, $breakpoint);
+      width: vw(300, $breakpoint);
+    }
+  }
+}

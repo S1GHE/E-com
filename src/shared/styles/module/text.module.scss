@@ -1,0 +1,54 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.p16{
+  font-size: 16px;
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      font-size: vw(16, $breakpoint);
+    }
+  }
+
+  &__bold{
+    @extend .p16;
+    font-weight: 700;
+  }
+
+  &__black{
+    @extend .p16;
+    font-weight: 800;
+  }
+}
+
+.p14{
+  font-size: 12px;
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      font-size: vw(14, $breakpoint);
+    }
+  }
+}
+
+.h20{
+  font-size: 18px;
+  font-weight: 800;
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      font-size: vw(20, $breakpoint);
+    }
+  }
+}
+
+.h32{
+  font-size: 24px;
+  font-weight: 800;
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      font-size: vw(32, $breakpoint);
+    }
+  }
+}

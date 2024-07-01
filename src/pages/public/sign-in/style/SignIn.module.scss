@@ -1,0 +1,18 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      gap: vw(8, $breakpoint);
+    }
+  }
+}
+
+.logo{
+  align-self: center;
+}

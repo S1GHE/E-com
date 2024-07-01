@@ -1,0 +1,59 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.btn{
+  width: 100%;
+  display: inline-block;
+  padding: 8px 6px;
+  font-size: 16px;
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      font-size: vw(16, $breakpoint);
+      padding: vw(14, $breakpoint) vw(16, $breakpoint);
+    }
+  }
+}
+
+.btn.text{
+  color: black;
+  border: 2px solid transparent;
+
+  &:active, &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn.outline{
+  color: black;
+  border: 2px solid var(--black);
+  transition: 300ms;
+
+  &:active{
+    background-color: var(--black);
+    color: var(--white);
+  }
+}
+
+.btn.black{
+  color: var(--white);
+  border: 2px solid var(--black);
+  background-color: var(--black);
+  transition: 300ms;
+  
+  @media (hover: hover) {
+    &:hover{
+      background-color: var(--black-t80);
+    }
+  }
+
+  @media (hover: none) {
+    &:active{
+      background-color: var(--black-t60);
+    }
+  }
+
+  &:active{
+    background-color: var(--black-t60);
+  }
+}

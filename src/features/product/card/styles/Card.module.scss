@@ -1,0 +1,54 @@
+@import "@shared/styles/logic/func";
+@import "@shared/styles/config/config";
+
+.card_container{
+  width: 100%;
+  max-width: 130px;
+  border: 2px solid var(--black);
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      max-width: vw(130, $breakpoint);
+    }
+  }
+
+  @media (max-width: #{get-breakpoint("sm")}px) {
+    max-width: 100%;
+  }
+}
+
+.card_img{
+  position: relative;
+  height: 115px;
+  background-color: var(--black-t08);
+  border-bottom: 2px solid var(--black);
+
+  img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+  }
+}
+
+.card_body{
+  padding: 14px;
+  border-bottom: 2px solid var(--black);
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  span{
+    color: var(--black-t60);
+  }
+
+  @each $label, $breakpoint in $breakpoints{
+    @media (min-width: #{$breakpoint}px) {
+      padding: vw(16, $breakpoint);
+      gap: vw(12, $breakpoint);
+    }
+  }
+}
